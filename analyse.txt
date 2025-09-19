@@ -1,0 +1,12 @@
+# Step 1: Find recent log files
+find /Users/nana/logs -name "*.log" -mtime -1
+# Step 2: Search for errors in application log
+grep "ERROR" /Users/nana/logs/application.log
+# Step 3: Count errors
+grep -c "ERROR" /Users/nana/logs/application.log
+# Step 4: Get most recent error
+grep "ERROR" /Users/nana/logs/application.log | tail -1
+# Step 5: Check for fatal errors in system log
+grep "FATAL" /Users/nana/logs/system.log
+# Step 6: Count fatal errors
+grep -c "FATAL" /Users/nana/logs/system.log
